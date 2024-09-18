@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  --color-white: #ffffff;
+  --color-blue: #02799d;
+  --color-text: #e1e1e6;
+  --color-text-nav: #8d8d99;
+}
+
+body {
+  background-image: url(../assets/mountains-universe-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  height: 100%;
+  max-width: 121rem;
+  margin: auto;
+  width: 90%;
+}
+
+nav {
+  padding: 4rem 7.2rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+nav a {
+  color: var(--color-text-nav);
+  text-decoration: none;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  transition: all 0.3s;
+}
+
+a:hover {
+  color: var(--color-white);
+  font-weight: bold;
+  transform: scale(1.1);
+  transition: 0.3s all ease-out;
+}
+
+.home-wrapper {
+  display: grid;
+  place-items: center;
+  margin-top: 18.2rem;
+}
+
+button {
+  width: 19.5rem;
+  height: 4.8rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-white);
+  color: var(--color-text);
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+  padding: 1.2rem 3.2rem;
+  margin-top: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: var(--color-white);
+  color: var(--color-blue);
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.3s all ease;
+}
+
+.universe-wrapper,
+.explore-wrapper {
+  max-width: 64.8rem;
+  margin-top: 6.3rem;
+  margin-left: 10.2rem;
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: bold;
+  color: var(--color-text);
+  line-height: 125%;
+}
+
+p {
+  font-size: 1.8rem;
+  color: var(--color-text);
+  font-weight: regular;
+  line-height: 160%;
+  margin-top: 1.6rem;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-7rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes samePlace {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+nav ul li:nth-child(1) {
+  animation: fromTop 1.2s;
+}
+nav ul li:nth-child(2) {
+  animation: fromTop 1.2s 0.1s backwards;
+}
+nav ul li:nth-child(3) {
+  animation: fromTop 1.2s 0.2s backwards;
+}
+nav ul li:nth-child(4) {
+  animation: fromTop 1.2s 0.3s backwards;
+}
+h1,
+p,
+button {
+  animation: samePlace 1s backwards;
+}
+
+@media (max-width: 650px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    gap: 1.8rem;
+  }
+
+  nav a {
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+  }
+
+  .universe-wrapper,
+  .explore-wrapper {
+    max-width: 64.8rem;
+    margin: 6.8rem 5rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
